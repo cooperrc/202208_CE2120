@@ -1,0 +1,8 @@
+rm _build/*
+
+for i in *.xopp
+    xournalpp -p _build/(basename $i .xopp).pdf $i
+    set name (basename $i .xopp)
+    echo "[$name]($name.pdf)" >> _build/index.md
+end
+
